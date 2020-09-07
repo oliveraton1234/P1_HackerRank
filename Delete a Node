@@ -1,0 +1,14 @@
+ static SinglyLinkedListNode deleteNode(SinglyLinkedListNode head, int position) {
+    if (position == 0){
+        head = head.next;
+        return head;
+    }
+    int k = position - 1;
+    SinglyLinkedListNode tell = head;
+    while(k != 0){
+        tell = tell.next;
+        k--;
+    }
+    tell.next = tell.next.next;
+    return head;
+    }
