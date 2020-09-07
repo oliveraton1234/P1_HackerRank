@@ -1,0 +1,20 @@
+ static int findMergeNode(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+        SinglyLinkedListNode aux;
+        aux = head1;
+        SinglyLinkedListNode aux2;
+        aux2 = head2;
+
+        while(aux != aux2){ 
+            if(aux.next == null){
+                aux = head2;
+            }else{ 
+                aux = aux.next;
+            }
+            if(aux2.next == null){
+                aux2 = head1;
+            }else{ 
+                aux2 = aux2.next;
+            }
+        }
+        return aux.data;
+    }
